@@ -36,8 +36,8 @@ jobs:
         with:
           artifacts: ${{ github.workspace }}/target/*.jar
           draft: false
-          name: Release v$VERSION
-          tag: $VERSION
+          name: Release v${{ env.VERSION }}
+          tag: ${{ env.VERSION }}
           token: ${{ secrets.GITHUB_TOKEN }}
           body: "The artifacts are kept up to date with the branch release."
           commit: ${{ github.sha }}
