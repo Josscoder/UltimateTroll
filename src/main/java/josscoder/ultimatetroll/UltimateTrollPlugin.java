@@ -2,6 +2,7 @@ package josscoder.ultimatetroll;
 
 import cn.nukkit.plugin.PluginBase;
 import cn.nukkit.utils.TextFormat;
+import josscoder.ultimatetroll.command.TrollCommand;
 import josscoder.ultimatetroll.trap.ITrap;
 import josscoder.ultimatetroll.trap.base.*;
 import lombok.Getter;
@@ -42,15 +43,24 @@ public class UltimateTrollPlugin extends PluginBase {
 
     @Override
     public void onEnable() {
+        getServer().getCommandMap().register("troll", new TrollCommand());
         getLogger().info(TextFormat.GREEN + "UltimateTroll has been enabled");
     }
 
-    public void storeTrap(ITrap ...trap) {
+    public void storeTrap(ITrap... trap) {
         trapList.addAll(Arrays.asList(trap));
+    }
+
+    public ITrap getTrap(String id) {
+        return trapList.stream()
+                .filter(trap -> trap.getId().equalsIgnoreCase(id) || trap.getName().equalsIgnoreCase(id))
+                .findFirst()
+                .orElse(null);
     }
 
     @Override
     public void onDisable() {
+        trapList.forEach(ITrap::close);
         getLogger().info(TextFormat.RED + "UltimateTroll has been disabled");
     }
 }
