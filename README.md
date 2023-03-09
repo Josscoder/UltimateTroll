@@ -12,3 +12,15 @@ Plugin for your Nukkit Server to troll everyone
 
 - Player Selector:
 
+- Variety of traps:
+
+## 🌏 Add as dependency
+Maven:
+
+```xml
+
+```
+
+## 📜 LICENSE
+
+This plugin is licensed under the [GNU GENERAL PUBLIC LICENSE](https://github.com/Josscoder/UltimateTroll/blob/master/LICENSE), this plugin was completely created by Josscoder (José Luciano Mejia Arias)
