@@ -17,7 +17,7 @@ public class BurnTrap extends Trap {
 
     @Override
     public void onExecute(Player target) {
-
+        target.setOnFire(10);
     }
 
     @Override

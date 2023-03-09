@@ -2,12 +2,9 @@ package josscoder.ultimatetroll.trap;
 
 import cn.nukkit.Player;
 import cn.nukkit.utils.TextFormat;
+import josscoder.ultimatetroll.UltimateTrollPlugin;
 
 public abstract class Trap implements ITrap {
-
-    public Trap() {
-        init();
-    }
 
     @Override
     public String getId() {
@@ -17,6 +14,12 @@ public abstract class Trap implements ITrap {
     @Override
     public String getName() {
         return getClass().getSimpleName().replace("Trap", "").replaceAll("([a-z])([A-Z])", "$1 $2");
+    }
+
+    @Override
+    public void onEnable() {
+        init();
+        UltimateTrollPlugin.getInstance().getLogger().warning(TextFormat.YELLOW + getName() + " trap was loaded!");
     }
 
     @Override

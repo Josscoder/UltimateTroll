@@ -1,13 +1,13 @@
 package josscoder.ultimatetroll.trap.base;
 
 import cn.nukkit.Player;
-import josscoder.ultimatetroll.trap.Trap;
+import cn.nukkit.block.BlockBedrock;
 
-public class BedrockJailTrap extends Trap {
+public class BedrockJailTrap extends JailTrap {
 
     @Override
     public void init() {
-
+        setBlockBase(new BlockBedrock());
     }
 
     @Override
@@ -16,7 +16,7 @@ public class BedrockJailTrap extends Trap {
     }
 
     @Override
-    public void onExecute(Player target) {
+    public void whenJailBuilt(Player target) {
 
     }
 

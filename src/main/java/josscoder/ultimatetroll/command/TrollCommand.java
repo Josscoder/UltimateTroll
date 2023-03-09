@@ -35,7 +35,7 @@ public class TrollCommand extends Command {
 
         Player player = (Player) sender;
 
-        if (args.length == 1) {
+        if (args.length == 0) {
             selectPlayer(player);
             return true;
         }

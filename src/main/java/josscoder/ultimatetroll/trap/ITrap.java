@@ -17,4 +17,5 @@ public interface ITrap {
 
     void close();
 
+    void onEnable();
 }

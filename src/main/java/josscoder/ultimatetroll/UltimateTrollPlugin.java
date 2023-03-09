@@ -22,7 +22,6 @@ public class UltimateTrollPlugin extends PluginBase {
             new ChangeHeadRotationTrap(),
             new ChangeTimeCycleTrap(),
             new CrashClientTrap(),
-            new CreepersTrap(),
             new DropAllInventoryTrap(),
             new DropItemInHandTrap(),
             new GiveAllEffectsTrap(),
@@ -43,12 +42,15 @@ public class UltimateTrollPlugin extends PluginBase {
 
     @Override
     public void onEnable() {
+        //TODO: FormAPI.init(this);
+        trapList.forEach(ITrap::onEnable);
         getServer().getCommandMap().register("troll", new TrollCommand());
         getLogger().info(TextFormat.GREEN + "UltimateTroll has been enabled");
     }
 
-    public void storeTrap(ITrap... trap) {
-        trapList.addAll(Arrays.asList(trap));
+    public void storeNewTrap(ITrap trap) {
+        trap.onEnable();
+        trapList.add(trap);
     }
 
     public ITrap getTrap(String id) {

@@ -1,13 +1,13 @@
 package josscoder.ultimatetroll.trap.base;
 
 import cn.nukkit.Player;
-import josscoder.ultimatetroll.trap.Trap;
+import cn.nukkit.block.BlockTNT;
 
-public class TNTJailTrap extends Trap {
+public class TNTJailTrap extends JailTrap {
 
     @Override
     public void init() {
-
+        setBlockBase(new BlockTNT());
     }
 
     @Override
@@ -16,7 +16,7 @@ public class TNTJailTrap extends Trap {
     }
 
     @Override
-    public void onExecute(Player target) {
+    public void whenJailBuilt(Player target) {
 
     }
 
