@@ -1,25 +1,32 @@
 package josscoder.ultimatetroll.trap;
 
 import cn.nukkit.Player;
+import cn.nukkit.plugin.PluginLogger;
 import cn.nukkit.utils.TextFormat;
 import josscoder.ultimatetroll.UltimateTrollPlugin;
 
 public abstract class Trap implements ITrap {
 
+    private static final PluginLogger logger = UltimateTrollPlugin.getInstance().getLogger();
+
+    public String getSimpleName() {
+        return getClass().getSimpleName();
+    }
+
     @Override
     public String getId() {
-        return getClass().getSimpleName().replaceAll("([a-z])([A-Z])", "$1_$2").toLowerCase();
+        return getSimpleName().replaceAll("([a-z])([A-Z])", "$1_$2").toLowerCase();
     }
 
     @Override
     public String getName() {
-        return getClass().getSimpleName().replace("Trap", "").replaceAll("([a-z])([A-Z])", "$1 $2");
+        return getSimpleName().replace("Trap", "").replaceAll("([a-z])([A-Z])", "$1 $2");
     }
 
     @Override
     public void onEnable() {
         init();
-        UltimateTrollPlugin.getInstance().getLogger().warning(TextFormat.YELLOW + getName() + " trap was loaded!");
+        logger.warning(TextFormat.GREEN + getName() + " trap was loaded!");
     }
 
     @Override
@@ -41,5 +48,11 @@ public abstract class Trap implements ITrap {
     @Override
     public String getImage() {
         return "textures/blocks/barrier.png";
+    }
+
+    @Override
+    public void onDisable() {
+        close();
+        logger.warning(TextFormat.RED + getName() + " trap was closed!");
     }
 }

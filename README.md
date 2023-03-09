@@ -52,50 +52,65 @@ Maven:
 </dependency>
 ```
 
-## 🕳 Create and get a trap
+## 🕳 Add a trap
 
 ```java
-package josscoder.ultimatetroll.trap.base;
-
 import cn.nukkit.Player;
-import cn.nukkit.block.BlockAir;
-import cn.nukkit.inventory.PlayerInventory;
 import josscoder.ultimatetroll.UltimateTrollPlugin;
 import josscoder.ultimatetroll.trap.Trap;
 
-public class DropItemInHandTrap extends Trap {
+public class CreateTrap {
 
-    @Override
-    public void init() {
-        //To get: UltimateTrollPlugin.getInstance().getTrap("BurnTrap")...
-    }
+    public static void main(String[] args) {
+        UltimateTrollPlugin.getInstance().addTrap(new Trap() {
+            @Override
+            public void init() {
+                System.out.println("Initialized!");
+            }
 
-    @Override
-    public String getImage() {
-        return "https://i.imgur.com/piQOP6U.png";
-    }
+            @Override
+            public String getSimpleName() {
+                return "TestTrap";
+            }
 
-    @Override
-    public void onExecute(Player target) {
-        PlayerInventory inventory = target.getInventory();
+            @Override
+            public void onExecute(Player target) {
+                target.sendMessage("Hello");
+            }
 
-        target.dropItem(inventory.getItemInHand());
-        inventory.setItemInHand(new BlockAir().toItem());
-        inventory.sendContents(target);
-        inventory.sendHeldItem(target);
-    }
-
-    @Override
-    public void close() {
-
+            @Override
+            public void close() {
+                System.out.println("Closing...");
+            }
+        });
     }
 }
 
-public class MyPlugin extends PluginBase {
+```
 
-    @Override
-    public void onEnable() {
-        //store new trap UltimateTrollPlugin.getInstance().storeNewTrap(new DropItemInHandTrap());
+## 🕳 Remove a trap
+
+```java
+import josscoder.ultimatetroll.UltimateTrollPlugin;
+
+public class RemoveTrap {
+
+    public static void main(String[] args) {
+        UltimateTrollPlugin.getInstance().removeTrap("Burn");
+    }
+}
+```
+
+## 🕳 Get a trap
+
+```java
+import josscoder.ultimatetroll.UltimateTrollPlugin;
+
+public class GetTrap {
+
+    public static void main(String[] args) {
+        UltimateTrollPlugin.getInstance().getTrap("Burn")...
+        UltimateTrollPlugin.getInstance().getTrap("BurnTrap")...
     }
 }
 

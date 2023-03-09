@@ -4,6 +4,7 @@ import cn.nukkit.Player;
 
 public interface ITrap {
 
+    void onEnable();
     void init();
 
     String getId();
@@ -15,7 +16,6 @@ public interface ITrap {
     void execute(Player target, Player sender);
     void onExecute(Player target);
 
+    void onDisable();
     void close();
-
-    void onEnable();
 }

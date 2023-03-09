@@ -52,9 +52,17 @@ public class UltimateTrollPlugin extends PluginBase {
         getLogger().info(TextFormat.GREEN + "UltimateTroll has been enabled");
     }
 
-    public void storeNewTrap(ITrap trap) {
+    public void addTrap(ITrap trap) {
         trap.onEnable();
         trapList.add(trap);
+    }
+
+    public void removeTrap(String id) {
+        ITrap trap = getTrap(id);
+        if (trap != null) {
+            trap.onDisable();
+            trapList.remove(trap);
+        }
     }
 
     public ITrap getTrap(String id) {
@@ -66,7 +74,7 @@ public class UltimateTrollPlugin extends PluginBase {
 
     @Override
     public void onDisable() {
-        trapList.forEach(ITrap::close);
+        trapList.forEach(ITrap::onDisable);
         getLogger().info(TextFormat.RED + "UltimateTroll has been disabled");
     }
 }
