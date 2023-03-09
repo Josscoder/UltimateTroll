@@ -33,6 +33,7 @@ Plugin for your Nukkit Server to troll everyone
 ## ⏯  Watch the video
 [![Watch the video](https://i.imgur.com/WgkocOW.png)](https://www.youtube.com/watch?v=GLZIB9H5-sg)
 
+# For Developers
 ## 🌏 Add as dependency
 Maven:
 
@@ -49,6 +50,55 @@ Maven:
     <artifactId>UltimateTroll</artifactId>
     <version>1.0.0</version>
 </dependency>
+```
+
+## 🕳 Create and get a trap
+
+```java
+package josscoder.ultimatetroll.trap.base;
+
+import cn.nukkit.Player;
+import cn.nukkit.block.BlockAir;
+import cn.nukkit.inventory.PlayerInventory;
+import josscoder.ultimatetroll.UltimateTrollPlugin;
+import josscoder.ultimatetroll.trap.Trap;
+
+public class DropItemInHandTrap extends Trap {
+
+    @Override
+    public void init() {
+        //To get: UltimateTrollPlugin.getInstance().getTrap("BurnTrap")...
+    }
+
+    @Override
+    public String getImage() {
+        return "https://i.imgur.com/piQOP6U.png";
+    }
+
+    @Override
+    public void onExecute(Player target) {
+        PlayerInventory inventory = target.getInventory();
+
+        target.dropItem(inventory.getItemInHand());
+        inventory.setItemInHand(new BlockAir().toItem());
+        inventory.sendContents(target);
+        inventory.sendHeldItem(target);
+    }
+
+    @Override
+    public void close() {
+
+    }
+}
+
+public class MyPlugin extends PluginBase {
+
+    @Override
+    public void onEnable() {
+        //store new trap UltimateTrollPlugin.getInstance().storeNewTrap(new DropItemInHandTrap());
+    }
+}
+
 ```
 
 ## 📜 LICENSE
