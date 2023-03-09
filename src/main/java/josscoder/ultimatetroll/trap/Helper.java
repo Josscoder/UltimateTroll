@@ -32,7 +32,9 @@ public class Helper {
                 new ShuffleInventoryTrap(),
                 new TNTJailTrap(),
                 new VanishTrap(),
-                new AppearTrap()
+                new AppearTrap(),
+                new LevitationTrap(),
+                new CobwebJailTrap()
         );
     }
 

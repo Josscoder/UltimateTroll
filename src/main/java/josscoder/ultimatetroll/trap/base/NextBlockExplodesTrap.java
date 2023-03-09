@@ -49,7 +49,12 @@ public class NextBlockExplodesTrap extends Trap implements Listener {
 
     @EventHandler
     private void onQuit(PlayerQuitEvent event) {
-        event.getPlayer().namedTag.putBoolean(NBT_NEXT_BLOCK_EXPLODES, false);
+        Player player = event.getPlayer();
+        if (player.namedTag == null) {
+            return;
+        }
+
+        player.namedTag.putBoolean(NBT_NEXT_BLOCK_EXPLODES, false);
     }
 
     @Override
