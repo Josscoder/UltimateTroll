@@ -1,10 +1,9 @@
 package josscoder.ultimatetroll.trap.base;
 
 import cn.nukkit.Player;
-import cn.nukkit.Server;
 import josscoder.ultimatetroll.trap.Trap;
 
-public class VanishTrap extends Trap {
+public class ClearEffectsTrap extends Trap {
 
     @Override
     public void init() {
@@ -13,12 +12,13 @@ public class VanishTrap extends Trap {
 
     @Override
     public String getImage() {
-        return "textures/ui/user_icon.png";
+        return "textures/items/bucket_milk.png";
     }
 
     @Override
     public void onExecute(Player target) {
-        Server.getInstance().getOnlinePlayers().values().forEach(onlinePlayer -> onlinePlayer.hidePlayer(target));
+        target.removeAllEffects();
+        target.setMaxHealth(20);
     }
 
     @Override
@@ -26,4 +26,3 @@ public class VanishTrap extends Trap {
 
     }
 }
-

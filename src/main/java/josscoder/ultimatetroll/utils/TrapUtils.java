@@ -36,12 +36,20 @@ public class TrapUtils {
     }
 
     public static void setTime(Player player, int time) {
+        if (player == null) {
+            return;
+        }
+
         SetTimePacket packet = new SetTimePacket();
         packet.time = time;
         player.dataPacket(packet);
     }
 
-    public void resetTime(Player player) {
+    public static void resetTime(Player player) {
+        if (player == null) {
+            return;
+        }
+
         setTime(player, player.getLevel().getTime());
     }
 

@@ -4,7 +4,7 @@ import cn.nukkit.Player;
 import cn.nukkit.Server;
 import josscoder.ultimatetroll.trap.Trap;
 
-public class VanishTrap extends Trap {
+public class AppearTrap extends Trap {
 
     @Override
     public void init() {
@@ -13,12 +13,12 @@ public class VanishTrap extends Trap {
 
     @Override
     public String getImage() {
-        return "textures/ui/user_icon.png";
+        return "textures/ui/sidebar_icons/profile_screen_icon.png";
     }
 
     @Override
     public void onExecute(Player target) {
-        Server.getInstance().getOnlinePlayers().values().forEach(onlinePlayer -> onlinePlayer.hidePlayer(target));
+        Server.getInstance().getOnlinePlayers().values().forEach(onlinePlayer -> onlinePlayer.showPlayer(target));
     }
 
     @Override
@@ -26,4 +26,3 @@ public class VanishTrap extends Trap {
 
     }
 }
-

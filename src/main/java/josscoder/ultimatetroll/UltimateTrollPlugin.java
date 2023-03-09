@@ -25,14 +25,17 @@ public class UltimateTrollPlugin extends PluginBase {
             new DropAllInventoryTrap(),
             new DropItemInHandTrap(),
             new GiveAllEffectsTrap(),
+            new ClearEffectsTrap(),
             new HideAllPlayersTrap(),
+            new ShowPlayersTrap(),
             new LaunchTrap(),
             new LightningStrikeTramp(),
             new NextBlockExplodesTrap(),
             new NukeTrap(),
             new ShuffleInventoryTrap(),
             new TNTJailTrap(),
-            new VanishTrap()
+            new VanishTrap(),
+            new AppearTrap()
     );
 
     @Override
