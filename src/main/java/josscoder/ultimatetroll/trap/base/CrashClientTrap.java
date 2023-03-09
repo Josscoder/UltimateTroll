@@ -1,4 +1,17 @@
 package josscoder.ultimatetroll.trap.base;
 
-public class CrashClientTrap {
+import josscoder.ultimatetroll.trap.Trap;
+
+public class CrashClientTrap extends Trap {
+
+    @Override
+    public void init() {
+
+    }
+
+    @Override
+    public void close() {
+
+    }
 }
+

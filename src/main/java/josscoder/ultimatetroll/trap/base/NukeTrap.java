@@ -1,4 +1,17 @@
 package josscoder.ultimatetroll.trap.base;
 
-public class NukeTrap {
+import josscoder.ultimatetroll.trap.Trap;
+
+public class NukeTrap extends Trap {
+
+    @Override
+    public void init() {
+
+    }
+
+    @Override
+    public void close() {
+
+    }
 }
+

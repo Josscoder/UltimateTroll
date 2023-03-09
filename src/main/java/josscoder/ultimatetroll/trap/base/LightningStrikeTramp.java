@@ -1,4 +1,17 @@
 package josscoder.ultimatetroll.trap.base;
 
-public class LightningStrikeTramp {
+import josscoder.ultimatetroll.trap.Trap;
+
+public class LightningStrikeTramp extends Trap {
+
+    @Override
+    public void init() {
+
+    }
+
+    @Override
+    public void close() {
+
+    }
 }
+

@@ -1,4 +1,17 @@
 package josscoder.ultimatetroll.trap.base;
 
-public class ShuffleInventoryTrap {
+import josscoder.ultimatetroll.trap.Trap;
+
+public class ShuffleInventoryTrap extends Trap {
+
+    @Override
+    public void init() {
+
+    }
+
+    @Override
+    public void close() {
+
+    }
 }
+

@@ -1,4 +1,17 @@
 package josscoder.ultimatetroll.trap.base;
 
-public class LaunchTrap {
+import josscoder.ultimatetroll.trap.Trap;
+
+public class LaunchTrap extends Trap {
+
+    @Override
+    public void init() {
+
+    }
+
+    @Override
+    public void close() {
+
+    }
 }
+

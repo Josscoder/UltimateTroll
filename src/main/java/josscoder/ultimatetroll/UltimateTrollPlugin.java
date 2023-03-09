@@ -3,8 +3,7 @@ package josscoder.ultimatetroll;
 import cn.nukkit.plugin.PluginBase;
 import cn.nukkit.utils.TextFormat;
 import josscoder.ultimatetroll.trap.ITrap;
-import josscoder.ultimatetroll.trap.base.BurnTrap;
-import josscoder.ultimatetroll.trap.base.DropItemInHandTrap;
+import josscoder.ultimatetroll.trap.base.*;
 import lombok.Getter;
 
 import java.util.Arrays;
@@ -17,8 +16,23 @@ public class UltimateTrollPlugin extends PluginBase {
 
     @Getter
     private final List<ITrap> trapList = Arrays.asList(
+            new BedrockJailTrap(),
             new BurnTrap(),
-            new DropItemInHandTrap()
+            new ChangeHeadRotationTrap(),
+            new ChangeTimeCycleTrap(),
+            new CrashClientTrap(),
+            new CreepersTrap(),
+            new DropAllInventoryTrap(),
+            new DropItemInHandTrap(),
+            new GiveAllEffectsTrap(),
+            new HideAllPlayersTrap(),
+            new LaunchTrap(),
+            new LightningStrikeTramp(),
+            new NextBlockExplodesTrap(),
+            new NukeTrap(),
+            new ShuffleInventoryTrap(),
+            new TNTJailTrap(),
+            new VanishTrap()
     );
 
     @Override
