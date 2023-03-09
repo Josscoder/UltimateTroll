@@ -2,6 +2,7 @@ package josscoder.ultimatetroll;
 
 import cn.nukkit.plugin.PluginBase;
 import cn.nukkit.utils.TextFormat;
+import com.denzelcode.form.FormAPI;
 import josscoder.ultimatetroll.command.TrollCommand;
 import josscoder.ultimatetroll.trap.ITrap;
 import josscoder.ultimatetroll.trap.base.*;
@@ -45,7 +46,7 @@ public class UltimateTrollPlugin extends PluginBase {
 
     @Override
     public void onEnable() {
-        //TODO: FormAPI.init(this);
+        FormAPI.init(this);
         trapList.forEach(ITrap::onEnable);
         getServer().getCommandMap().register("troll", new TrollCommand());
         getLogger().info(TextFormat.GREEN + "UltimateTroll has been enabled");
