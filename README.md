@@ -2,6 +2,12 @@
 <img src="https://github.com/Josscoder/UltimateTroll/blob/master/.github/assets/logo.png" height="64" width="64" align="left" alt="">
 </h1>
 
+## 📩 Setup
+
+1) Download the latest version [here](https://github.com/Josscoder/UltimateTroll/releases/latest)
+2) Put the .jar in your plugins folder
+3) And finally, start your server!
+
 ## 📙 Description
 
 Plugin for your Nukkit Server to troll everyone
@@ -23,6 +29,8 @@ Plugin for your Nukkit Server to troll everyone
 ![](https://github.com/Josscoder/UltimateTroll/blob/master/.github/assets/Screenshot_5.png)
 
 ![](https://github.com/Josscoder/UltimateTroll/blob/master/.github/assets/Screenshot_6.png)
+
+[![Watch the video](https://i.imgur.com/WgkocOW.png)](https://www.youtube.com/watch?v=GLZIB9H5-sg)
 
 ## 🌏 Add as dependency
 Maven:
