@@ -4,7 +4,7 @@ import cn.nukkit.plugin.PluginBase;
 import cn.nukkit.utils.TextFormat;
 import com.denzelcode.form.FormAPI;
 import josscoder.ultimatetroll.command.TrollCommand;
-import josscoder.ultimatetroll.trap.TrapHelper;
+import josscoder.ultimatetroll.trap.Helper;
 import lombok.Getter;
 
 public class UltimateTrollPlugin extends PluginBase {
@@ -13,25 +13,25 @@ public class UltimateTrollPlugin extends PluginBase {
     private static UltimateTrollPlugin instance;
 
     @Getter
-    private TrapHelper trapHelper;
+    private Helper helper;
 
     @Override
     public void onLoad() {
         instance = this;
-        trapHelper = new TrapHelper();
+        helper = new Helper();
     }
 
     @Override
     public void onEnable() {
         FormAPI.init(this);
-        trapHelper.init();
+        helper.init();
         getServer().getCommandMap().register("troll", new TrollCommand());
         getLogger().info(TextFormat.GREEN + "UltimateTroll has been enabled");
     }
 
     @Override
     public void onDisable() {
-        trapHelper.close();
+        helper.close();
         getLogger().info(TextFormat.RED + "UltimateTroll has been disabled");
     }
 }

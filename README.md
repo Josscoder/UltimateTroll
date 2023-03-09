@@ -62,7 +62,7 @@ import josscoder.ultimatetroll.trap.Trap;
 public class CreateTrap {
 
     public static void main(String[] args) {
-        UltimateTrollPlugin.getInstance().getTrapHelper().add(new Trap() {
+        UltimateTrollPlugin.getInstance().getHelper().registerTrap(new Trap() {
             @Override
             public void init() {
                 System.out.println("Initialized!");
@@ -96,7 +96,7 @@ import josscoder.ultimatetroll.UltimateTrollPlugin;
 public class RemoveTrap {
 
     public static void main(String[] args) {
-        UltimateTrollPlugin.getInstance().getTrapHelper().remove("Burn");
+        UltimateTrollPlugin.getInstance().getHelper().deregisterTrap("Burn");
     }
 }
 ```
@@ -109,8 +109,8 @@ import josscoder.ultimatetroll.UltimateTrollPlugin;
 public class GetTrap {
 
     public static void main(String[] args) {
-        UltimateTrollPlugin.getInstance().getTrapHelper().get("Burn")...
-        UltimateTrollPlugin.getInstance().getTrapHelper().get("BurnTrap")...
+        UltimateTrollPlugin.getInstance().getHelper().getTrap("Burn")...
+        UltimateTrollPlugin.getInstance().getHelper().getTrap("BurnTrap")...
     }
 }
 

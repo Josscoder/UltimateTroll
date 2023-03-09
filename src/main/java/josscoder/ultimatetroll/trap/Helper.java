@@ -7,13 +7,13 @@ import lombok.Getter;
 import java.util.Arrays;
 import java.util.List;
 
-public class TrapHelper {
+public class Helper {
 
     @Getter
     private final List<Trap> trapList = Lists.newArrayList();
 
     public void init() {
-        addAll(
+        registerTraps(
                 new BedrockJailTrap(),
                 new BurnTrap(),
                 new ChangeHeadRotationTrap(),
@@ -36,24 +36,24 @@ public class TrapHelper {
         );
     }
 
-    public void addAll(Trap... traps) {
-        Arrays.stream(traps).forEach(this::add);
+    public void registerTraps(Trap... traps) {
+        Arrays.stream(traps).forEach(this::registerTrap);
     }
 
-    public void add(Trap trap) {
+    public void registerTrap(Trap trap) {
         trap.onEnable();
         trapList.add(trap);
     }
 
-    public void remove(String id) {
-        Trap trap = get(id);
+    public void deregisterTrap(String id) {
+        Trap trap = getTrap(id);
         if (trap != null) {
             trap.onDisable();
             trapList.remove(trap);
         }
     }
 
-    public Trap get(String id) {
+    public Trap getTrap(String id) {
         return trapList.stream()
                 .filter(trap -> trap.getId().equalsIgnoreCase(id) || trap.getName().equalsIgnoreCase(id))
                 .findFirst()

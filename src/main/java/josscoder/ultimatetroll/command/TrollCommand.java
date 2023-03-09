@@ -13,7 +13,7 @@ import com.denzelcode.form.element.Dropdown;
 import com.denzelcode.form.window.SimpleWindowForm;
 import josscoder.ultimatetroll.UltimateTrollPlugin;
 import josscoder.ultimatetroll.trap.Trap;
-import josscoder.ultimatetroll.trap.TrapHelper;
+import josscoder.ultimatetroll.trap.Helper;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -85,9 +85,9 @@ public class TrollCommand extends Command {
                 target.getName()
         )));
 
-        TrapHelper trapHelper = UltimateTrollPlugin.getInstance().getTrapHelper();
+        Helper helper = UltimateTrollPlugin.getInstance().getHelper();
 
-        trapHelper.getTrapList().forEach(trap -> windowForm.addButton(trap.getId(), TextFormat.colorize(String.format(
+        helper.getTrapList().forEach(trap -> windowForm.addButton(trap.getId(), TextFormat.colorize(String.format(
                 "&9&l%s&r\n&3Click to Select",
                 trap.getName()
         )), trap.getImage()));
@@ -104,7 +104,7 @@ public class TrollCommand extends Command {
 
             String buttonName = button.getName();
 
-            Trap trap = trapHelper.get(buttonName);
+            Trap trap = helper.getTrap(buttonName);
             if (trap == null) {
                 return;
             }
