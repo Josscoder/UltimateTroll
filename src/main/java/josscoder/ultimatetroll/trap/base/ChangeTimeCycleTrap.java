@@ -11,6 +11,11 @@ public class ChangeTimeCycleTrap extends Trap {
     }
 
     @Override
+    public String getImage() {
+        return "textures/ui/time_4sunset.png";
+    }
+
+    @Override
     public void onExecute(Player target) {
 
     }

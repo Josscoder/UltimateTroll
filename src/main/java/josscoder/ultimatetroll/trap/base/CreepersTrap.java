@@ -11,6 +11,11 @@ public class CreepersTrap extends Trap {
     }
 
     @Override
+    public String getImage() {
+        return "textures/items/egg_creeper.png";
+    }
+
+    @Override
     public void onExecute(Player target) {
 
     }

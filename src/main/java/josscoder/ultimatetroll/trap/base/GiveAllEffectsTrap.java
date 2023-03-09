@@ -11,6 +11,11 @@ public class GiveAllEffectsTrap extends Trap {
     }
 
     @Override
+    public String getImage() {
+        return "textures/ui/speed_effect.png";
+    }
+
+    @Override
     public void onExecute(Player target) {
 
     }

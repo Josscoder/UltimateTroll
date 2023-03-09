@@ -11,6 +11,11 @@ public class TNTJailTrap extends Trap {
     }
 
     @Override
+    public String getImage() {
+        return "textures/blocks/tnt_top.png";
+    }
+
+    @Override
     public void onExecute(Player target) {
 
     }

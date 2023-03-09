@@ -11,6 +11,11 @@ public class VanishTrap extends Trap {
     }
 
     @Override
+    public String getImage() {
+        return "textures/ui/user_icon.png";
+    }
+
+    @Override
     public void onExecute(Player target) {
 
     }

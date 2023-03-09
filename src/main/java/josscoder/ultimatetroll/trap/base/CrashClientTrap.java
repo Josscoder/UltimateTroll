@@ -11,6 +11,11 @@ public class CrashClientTrap extends Trap {
     }
 
     @Override
+    public String getImage() {
+        return "textures/blocks/wool_colored_lime.png";
+    }
+
+    @Override
     public void onExecute(Player target) {
 
     }

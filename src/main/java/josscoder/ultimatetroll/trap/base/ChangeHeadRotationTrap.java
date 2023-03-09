@@ -11,6 +11,11 @@ public class ChangeHeadRotationTrap extends Trap {
     }
 
     @Override
+    public String getImage() {
+        return "textures/ui/warning_alex.png";
+    }
+
+    @Override
     public void onExecute(Player target) {
 
     }

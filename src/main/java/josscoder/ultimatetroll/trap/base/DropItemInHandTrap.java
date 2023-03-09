@@ -11,6 +11,11 @@ public class DropItemInHandTrap extends Trap {
     }
 
     @Override
+    public String getImage() {
+        return "https://i.imgur.com/piQOP6U.png";
+    }
+
+    @Override
     public void onExecute(Player target) {
 
     }

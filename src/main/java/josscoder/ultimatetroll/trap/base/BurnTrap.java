@@ -11,6 +11,11 @@ public class BurnTrap extends Trap {
     }
 
     @Override
+    public String getImage() {
+        return "textures/blocks/fire_1_placeholder.png";
+    }
+
+    @Override
     public void onExecute(Player target) {
 
     }

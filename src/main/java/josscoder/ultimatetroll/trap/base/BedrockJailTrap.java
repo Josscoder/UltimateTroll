@@ -11,6 +11,11 @@ public class BedrockJailTrap extends Trap {
     }
 
     @Override
+    public String getImage() {
+        return "textures/blocks/bedrock.png";
+    }
+
+    @Override
     public void onExecute(Player target) {
 
     }

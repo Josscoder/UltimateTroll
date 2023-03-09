@@ -11,6 +11,11 @@ public class NukeTrap extends Trap {
     }
 
     @Override
+    public String getImage() {
+        return "textures/blocks/tnt_side.png";
+    }
+
+    @Override
     public void onExecute(Player target) {
 
     }

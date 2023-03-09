@@ -11,6 +11,11 @@ public class NextBlockExplodesTrap extends Trap {
     }
 
     @Override
+    public String getImage() {
+        return "https://i.imgur.com/u85YEt6.png";
+    }
+
+    @Override
     public void onExecute(Player target) {
 
     }

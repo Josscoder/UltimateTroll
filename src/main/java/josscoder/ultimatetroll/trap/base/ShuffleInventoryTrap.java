@@ -11,6 +11,11 @@ public class ShuffleInventoryTrap extends Trap {
     }
 
     @Override
+    public String getImage() {
+        return "textures/ui/inventory_icon.png";
+    }
+
+    @Override
     public void onExecute(Player target) {
 
     }
