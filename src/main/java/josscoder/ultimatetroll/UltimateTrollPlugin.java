@@ -4,12 +4,8 @@ import cn.nukkit.plugin.PluginBase;
 import cn.nukkit.utils.TextFormat;
 import com.denzelcode.form.FormAPI;
 import josscoder.ultimatetroll.command.TrollCommand;
-import josscoder.ultimatetroll.trap.ITrap;
-import josscoder.ultimatetroll.trap.base.*;
+import josscoder.ultimatetroll.trap.TrapHelper;
 import lombok.Getter;
-
-import java.util.Arrays;
-import java.util.List;
 
 public class UltimateTrollPlugin extends PluginBase {
 
@@ -17,64 +13,25 @@ public class UltimateTrollPlugin extends PluginBase {
     private static UltimateTrollPlugin instance;
 
     @Getter
-    private final List<ITrap> trapList = Arrays.asList(
-            new BedrockJailTrap(),
-            new BurnTrap(),
-            new ChangeHeadRotationTrap(),
-            new ChangeTimeCycleTrap(),
-            new CrashClientTrap(),
-            new DropAllInventoryTrap(),
-            new DropItemInHandTrap(),
-            new GiveAllEffectsTrap(),
-            new ClearEffectsTrap(),
-            new HideAllPlayersTrap(),
-            new ShowPlayersTrap(),
-            new LaunchTrap(),
-            new LightningStrikeTramp(),
-            new NextBlockExplodesTrap(),
-            new NukeTrap(),
-            new ShuffleInventoryTrap(),
-            new TNTJailTrap(),
-            new VanishTrap(),
-            new AppearTrap()
-    );
+    private TrapHelper trapHelper;
 
     @Override
     public void onLoad() {
         instance = this;
+        trapHelper = new TrapHelper();
     }
 
     @Override
     public void onEnable() {
         FormAPI.init(this);
-        trapList.forEach(ITrap::onEnable);
+        trapHelper.init();
         getServer().getCommandMap().register("troll", new TrollCommand());
         getLogger().info(TextFormat.GREEN + "UltimateTroll has been enabled");
     }
 
-    public void addTrap(ITrap trap) {
-        trap.onEnable();
-        trapList.add(trap);
-    }
-
-    public void removeTrap(String id) {
-        ITrap trap = getTrap(id);
-        if (trap != null) {
-            trap.onDisable();
-            trapList.remove(trap);
-        }
-    }
-
-    public ITrap getTrap(String id) {
-        return trapList.stream()
-                .filter(trap -> trap.getId().equalsIgnoreCase(id) || trap.getName().equalsIgnoreCase(id))
-                .findFirst()
-                .orElse(null);
-    }
-
     @Override
     public void onDisable() {
-        trapList.forEach(ITrap::onDisable);
+        trapHelper.close();
         getLogger().info(TextFormat.RED + "UltimateTroll has been disabled");
     }
 }
