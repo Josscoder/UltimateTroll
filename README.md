@@ -30,6 +30,7 @@ Plugin for your Nukkit Server to troll everyone
 
 ![](https://github.com/Josscoder/UltimateTroll/blob/master/.github/assets/Screenshot_6.png)
 
+## ⏯  Watch the video
 [![Watch the video](https://i.imgur.com/WgkocOW.png)](https://www.youtube.com/watch?v=GLZIB9H5-sg)
 
 ## 🌏 Add as dependency
