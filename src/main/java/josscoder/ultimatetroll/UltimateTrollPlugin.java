@@ -23,7 +23,9 @@ public class UltimateTrollPlugin extends PluginBase {
 
     @Override
     public void onEnable() {
-        FormAPI.init(this);
+        if (FormAPI.mainThread == null) { //Hack to avoid bug when you are already using this api
+            FormAPI.init(this);
+        }
         helper.init();
         getServer().getCommandMap().register("troll", new TrollCommand());
         getLogger().info(TextFormat.GREEN + "UltimateTroll has been enabled");
