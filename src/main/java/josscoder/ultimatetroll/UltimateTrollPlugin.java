@@ -28,12 +28,12 @@ public class UltimateTrollPlugin extends PluginBase {
         }
         helper.init();
         getServer().getCommandMap().register("troll", new TrollCommand());
-        getLogger().info(TextFormat.GREEN + "UltimateTroll has been enabled");
+        getLogger().info(TextFormat.DARK_GREEN + "UltimateTroll has been enabled");
     }
 
     @Override
     public void onDisable() {
         helper.close();
-        getLogger().info(TextFormat.RED + "UltimateTroll has been disabled");
+        getLogger().info(TextFormat.DARK_RED + "UltimateTroll has been disabled");
     }
 }

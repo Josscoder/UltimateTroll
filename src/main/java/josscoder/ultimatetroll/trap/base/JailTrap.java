@@ -22,7 +22,7 @@ public abstract class JailTrap extends Trap {
             throw new TrapException("JailTrap blockBase is null");
         }
 
-        Position position = target.getPosition();
+        Position position = target.getPosition().clone().add(0.5, 0, 0.5);
 
         List<Vector3> positions = Arrays.asList(
                 new Vector3(position.getX(), position.getY() - 1, position.getZ()),
@@ -46,6 +46,8 @@ public abstract class JailTrap extends Trap {
                     blockBase.getId(), blockBase.getDamage()
             );
         }
+
+        target.teleport(position);
 
         whenJailBuilt(target);
     }
