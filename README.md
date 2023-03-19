@@ -119,4 +119,4 @@ public class GetTrap {
 
 ## 📜 LICENSE
 
-This plugin is licensed under the [GNU GENERAL PUBLIC LICENSE](https://github.com/Josscoder/UltimateTroll/blob/master/LICENSE), this plugin was completely created by Josscoder (José Luciano Mejia Arias)
+This plugin is licensed under the [Apache License 2.0 LICENSE](https://github.com/Josscoder/UltimateTroll/blob/master/LICENSE), this plugin was completely created by Josscoder (José Luciano Mejia Arias)
